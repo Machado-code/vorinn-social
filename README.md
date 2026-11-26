@@ -1,6 +1,6 @@
 # vorinn-social
 
-Artes, Reels e roteiros do Instagram @vorinn (Vorinn e Unnar).
+Artes, Reels e roteiros do Instagram @vorinn.com.br (Vorinn e Unnar).
 
 - `PROJETO.md`: decisões e memória do projeto.
 - `ESCRITORIO.md`: como o escritório (Claude Code) trabalha aqui.

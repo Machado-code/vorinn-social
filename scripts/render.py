@@ -125,8 +125,8 @@ def page(post, i, total, inner):
     wm = ''
     if i == 0 and not is_cover:
         wm = '<div class="wm-u">U</div>' if b == 'u' else f'<img class="wm-v" src="{A}vorinn-monograma-alpha.png">'
-    left = "vorinn.com.br" if b == "v" else "Unnar · um produto Vorinn"
-    right = '<div class="swipe">Arraste <span style="font-size:30px">→</span></div>' if (i == 0 and total > 1) else '<div>@vorinn</div>'
+    left = "Vorinn Tecnologia" if b == "v" else "Unnar · um produto Vorinn"
+    right = '<div class="swipe">Arraste <span style="font-size:30px">→</span></div>' if (i == 0 and total > 1) else '<div>@vorinn.com.br</div>'
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head>
 <body><div class="slide {b}"><div class="bg"></div>{'<div class="grid"></div>' if b=='v' else ''}
 <div class="top">{brand_html(b)}<div class="count">{i+1}/{total}</div></div>
