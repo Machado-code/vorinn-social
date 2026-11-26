@@ -55,13 +55,19 @@ em{font-style:italic;color:#C8982E}
 .painel img{width:100%;display:block;transform-origin:20% 30%}
 .btn{display:inline-flex;padding:30px 50px;border-radius:999px;background:#C8982E;color:#141008;font:600 42px 'Inter';box-shadow:0 14px 50px rgba(200,152,46,.35)}
 .by{display:flex;align-items:center;gap:18px;font:500 32px 'Inter';color:#9088A0}
+.abertura{position:absolute;left:0;top:420px;width:1080px;height:1080px;overflow:hidden;
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 55%,transparent 72%)}
+.abertura video{position:absolute;left:-420px;top:0;width:1920px;height:1080px}
+.clipbox{position:absolute;left:140px;top:650px;width:800px;height:1150px;overflow:hidden;border-radius:36px;border:1px solid #2A2733;box-shadow:0 40px 110px rgba(0,0,0,.7);background:#0E0D12}
+.clipbox video{position:absolute;left:-114px;top:-314px;width:1028px;height:1828px}
+.note{position:absolute;left:0;right:0;top:1830px;text-align:center;font:400 24px 'Inter';color:#5E5870}
 </style></head>
 <body>
 <div class="bg"></div>
 
 <!-- texto fixo no topo -->
-<div class="hook a" style="animation:fadein .3s 0s both, fadeout .25s 13.0s forwards">Todo sábado de evento é isso 😅</div>
-<div class="hook a" style="animation:fadein .3s 13.5s both, fadeout .25s 21.6s forwards">Agora, com o Unnar 👇</div>
+<div class="hook a" style="animation:fadein .3s 0s both, fadeout .25s 12.2s forwards">Todo sábado de evento é isso 😅</div>
+<div class="hook a" style="animation:fadein .3s 13.6s both, fadeout .25s 24.8s forwards">Agora, com o Unnar 👇</div>
 
 <!-- 1. 15h -->
 <div class="scene a" style="animation:fadein .2s 0s both, fadeout .2s 2.2s forwards">
@@ -107,46 +113,58 @@ em{font-style:italic;color:#C8982E}
  </div>
 </div>
 
-<!-- 6. virada -->
-<div class="scene a" style="animation:fadein .2s 12.3s both, fadeout .25s 13.9s forwards">
- <div class="center" style="gap:44px">
-  <div class="mkbig a" style="animation-name:glow;animation-duration:.6s;animation-delay:12.35s">U</div>
-  <div class="big a" style="animation-name:in;animation-duration:.45s;animation-delay:12.7s">Unnar</div>
- </div>
+<!-- 6. virada: abertura oficial do Unnar -->
+<div class="scene a" style="animation:fadein .2s 12.3s both, fadeout .3s 14.4s forwards">
+ <div class="abertura"><video id="v-abertura" muted playsinline preload="auto" src="../../assets/marca/unnar-abertura.mp4" data-start="12.35" data-from="0"></video></div>
 </div>
 
-<!-- 7-8. celular -->
-<div class="scene a" style="animation:fadein .2s 14.0s both, fadeout .25s 19.3s forwards">
- <div class="ptitle a" style="animation:in .45s 14.15s both, fadeout .2s 16.6s forwards">A equipe <em>confirma</em> pelo celular.</div>
- <div class="ptitle a" style="animation:in .45s 16.8s both">Check-in com <em>data e hora</em>.</div>
- <div id="phone" class="a" style="animation:phoneup .7s 14.05s both cubic-bezier(.2,.8,.2,1)"><div class="in a" style="animation-name:zoom;animation-duration:5s;animation-delay:14.6s">
-  <img src="../../assets/capturas-do-site/unnar-portal-celular.png">
-  <div class="hl a" style="left:40px;top:545px;width:138px;height:38px;animation:ring .45s 15.2s both, fadeout .2s 16.6s forwards"></div>
-  <div class="hl a" style="left:40px;top:805px;width:138px;height:38px;animation:ring .45s 15.6s both, fadeout .2s 16.6s forwards"></div>
-  <div class="hl a" style="left:322px;top:540px;width:110px;height:46px;animation-name:ring;animation-duration:.45s;animation-delay:17.3s"></div>
- </div></div>
+<!-- 7. confirmar presença (tela real) -->
+<div class="scene a" style="animation:fadein .25s 14.6s both, fadeout .25s 18.45s forwards">
+ <div class="ptitle a" style="animation:in .45s 14.7s both">A equipe <em>confirma</em> pelo celular.</div>
+ <div class="clipbox a" style="animation-name:in;animation-duration:.5s;animation-delay:14.65s"><video muted playsinline preload="auto" src="../../assets/unnar/gravacoes/portal-02-confirmar-presenca.mp4" data-start="14.65" data-from="0.6"></video></div>
+</div>
+
+<!-- 8. check-in (tela real) -->
+<div class="scene a" style="animation:fadein .25s 18.6s both, fadeout .25s 22.45s forwards">
+ <div class="ptitle a" style="animation:in .45s 18.7s both">Check-in com <em>data e hora</em>.</div>
+ <div class="clipbox"><video muted playsinline preload="auto" src="../../assets/unnar/gravacoes/portal-03-check-in.mp4" data-start="18.6" data-from="0.9"></video></div>
+ <div class="note a" style="animation-name:fadein;animation-duration:.4s;animation-delay:19.2s">Tela real do Unnar, com dados de exemplo.</div>
 </div>
 
 <!-- 9. painel -->
-<div class="scene a" style="animation:fadein .25s 19.4s both, fadeout .25s 21.7s forwards">
+<div class="scene a" style="animation:fadein .25s 22.6s both, fadeout .25s 24.9s forwards">
  <div class="center" style="gap:60px;top:400px">
-  <div class="mid a" style="animation-name:in;animation-duration:.45s;animation-delay:19.45s">E você acompanha <em>tudo no painel</em>.</div>
-  <div class="painel a" style="animation-name:in;animation-duration:.55s;animation-delay:19.7s"><img class="a" style="animation-name:zoom;animation-duration:2.4s;animation-delay:19.9s" src="../../assets/capturas-do-site/unnar-painel.png"></div>
+  <div class="mid a" style="animation-name:in;animation-duration:.45s;animation-delay:22.65s">E você acompanha <em>tudo no painel</em>.</div>
+  <div class="painel a" style="animation-name:in;animation-duration:.55s;animation-delay:22.9s"><img class="a" style="animation-name:zoom;animation-duration:2.4s;animation-delay:23.1s" src="../../assets/capturas-do-site/unnar-painel-conteudo.png"></div>
  </div>
 </div>
 
 <!-- 10. fechamento -->
-<div class="scene a" style="animation:fadein .3s 21.8s both">
+<div class="scene a" style="animation:fadein .3s 25.0s both">
  <div class="center" style="gap:30px;top:330px">
-  <div class="mkbig a" style="width:150px;height:150px;border-radius:38px;font-size:110px;animation-name:glow;animation-duration:.5s;animation-delay:21.85s">U</div>
-  <div class="big a" style="margin-top:30px;animation-name:in;animation-duration:.45s;animation-delay:22.1s">Gerencie menos.</div>
-  <div class="big a" style="animation-name:in;animation-duration:.45s;animation-delay:22.45s"><em>Crie mais.</em></div>
-  <div class="btn a" style="margin-top:40px;animation-name:in;animation-duration:.45s;animation-delay:22.9s">Conheça o Unnar · link na bio</div>
-  <div class="by a" style="margin-top:24px;animation-name:fadein;animation-duration:.5s;animation-delay:23.3s">um produto <img src="../../assets/capturas-do-site/vorinn-wordmark-alpha.png" style="height:21px"></div>
+  <img class="a" src="../../assets/marca/unnar-marca-fundo-escuro.svg" style="height:170px;filter:drop-shadow(0 0 50px rgba(200,152,46,.35));animation-name:glow;animation-duration:.5s;animation-delay:25.05s">
+  <div class="big a" style="margin-top:36px;animation-name:in;animation-duration:.45s;animation-delay:25.3s">Gerencie menos.</div>
+  <div class="big a" style="animation-name:in;animation-duration:.45s;animation-delay:25.65s"><em>Crie mais.</em></div>
+  <div class="btn a" style="margin-top:40px;animation-name:in;animation-duration:.45s;animation-delay:26.1s">Conheça o Unnar · link na bio</div>
+  <div class="by a" style="margin-top:24px;animation-name:fadein;animation-duration:.5s;animation-delay:26.5s">um produto <img src="../../assets/marca/vorinn-horizontal.png" style="height:30px"></div>
  </div>
 </div>
 
 <script>
-window.seek = (t) => { document.getAnimations().forEach(a => { a.pause(); a.currentTime = t*1000; }); };
+window.seek = async (t) => {
+  document.getAnimations().forEach(a => { a.pause(); a.currentTime = t*1000; });
+  const waits = [];
+  document.querySelectorAll('video').forEach(v => {
+    const st = parseFloat(v.dataset.start), fr = parseFloat(v.dataset.from || '0');
+    const d = isFinite(v.duration) ? v.duration : 9999;
+    const vt = Math.max(0, Math.min(d - 0.04, fr + (t - st)));
+    if (Math.abs(v.currentTime - vt) > 0.001 || v.readyState < 2) {
+      waits.push(new Promise(r => { const h = () => { v.removeEventListener('seeked', h); r(); }; v.addEventListener('seeked', h); v.currentTime = vt; setTimeout(r, 3000); }));
+    }
+  });
+  await Promise.all(waits);
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+};
+window.ready = () => Promise.all([...document.querySelectorAll('video')].map(v => v.readyState >= 2 ? 1 : new Promise(r => { v.addEventListener('loadeddata', r, {once:true}); v.load(); setTimeout(r, 5000); })));
 </script>
 </body></html>

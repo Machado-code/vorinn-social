@@ -1,12 +1,13 @@
 import sys, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from posts import POSTS, A
+from posts import POSTS, A, M, ROOT
 from playwright.sync_api import sync_playwright
 
 OUT = pathlib.Path(__file__).resolve().parent.parent / "posts" / "2026-11" / "lote-1"
 OUT.mkdir(exist_ok=True)
 
-CSS = """
+FONT = (ROOT / "assets" / "fonts" / "Sora-wght.ttf").as_uri()
+CSS = "@font-face{font-family:'Sora';src:url('" + FONT + "') format('truetype');font-weight:100 800}" + """
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:1080px;height:1350px;overflow:hidden}
 .slide{position:relative;width:1080px;height:1350px;padding:84px 88px 80px;display:flex;flex-direction:column;overflow:hidden;font-family:'Inter',sans-serif}
@@ -37,10 +38,10 @@ html,body{width:1080px;height:1350px;overflow:hidden}
 .row{display:flex;gap:56px;align-items:center}
 .col-text{flex:1}
 .phone{flex:0 0 400px;height:830px;border-radius:52px;padding:12px;overflow:hidden}
-.phone img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:42px;display:block}
+.phone img{width:100%;height:calc(100% + 66px);margin-top:-66px;object-fit:cover;object-position:top;border-radius:42px;display:block}
 .note{position:absolute;left:0;bottom:-6px;font:400 22px 'Inter';z-index:3}
 .shot{display:block;border-radius:22px}
-.shot-wide{width:904px}
+.shot-wide{width:700px}
 .shot-crop{width:904px}
 .shot-cover{position:absolute;left:0;top:520px;width:1240px;z-index:1}
 .steps{display:flex;flex-direction:column;gap:18px}
@@ -48,7 +49,7 @@ html,body{width:1080px;height:1350px;overflow:hidden}
 .step span{display:inline-flex;width:56px;height:56px;border-radius:50%;align-items:center;justify-content:center;font:600 26px 'Inter'}
 .swipe{display:flex;align-items:center;gap:12px}
 
-.wm-u{position:absolute;right:-60px;bottom:-260px;font:400 1100px/1 'Gelasio';color:rgba(200,152,46,.055);z-index:1;pointer-events:none}
+.wm-u{position:absolute;right:-120px;bottom:-140px;height:820px;opacity:.06;z-index:1;pointer-events:none}
 .wm-v{position:absolute;right:-90px;bottom:-40px;width:640px;opacity:.10;z-index:1}
 /* ---------- VORINN ---------- */
 .v{background:#030814;color:#CBD5E1}
@@ -60,9 +61,9 @@ html,body{width:1080px;height:1350px;overflow:hidden}
   background-image:linear-gradient(rgba(148,163,184,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.07) 1px,transparent 1px);
   background-size:72px 72px;
   -webkit-mask-image:radial-gradient(ellipse at 75% 15%,#000 0%,transparent 65%)}
-.v h1{font-family:'Inter Display';font-weight:600;font-size:94px;line-height:1.04;letter-spacing:-.025em;color:#fff}
-.v h2{font-family:'Inter Display';font-weight:600;font-size:72px;line-height:1.08;letter-spacing:-.02em;color:#fff}
-.v h3{font-family:'Inter Display';font-weight:600;color:#fff}
+.v h1{font-family:'Sora';font-weight:600;font-size:88px;line-height:1.08;letter-spacing:-.03em;color:#fff}
+.v h2{font-family:'Sora';font-weight:600;font-size:66px;line-height:1.12;letter-spacing:-.025em;color:#fff}
+.v h3{font-family:'Sora';font-weight:600;color:#fff}
 .v .acc{background:linear-gradient(90deg,#2F95FF,#6DB4FF);-webkit-background-clip:text;background-clip:text;color:transparent}
 .v .pill{align-self:flex-start;display:inline-flex;align-items:center;gap:14px;padding:12px 24px;border:1px solid rgba(109,180,255,.35);background:rgba(47,149,255,.08);border-radius:999px;color:#6DB4FF;font:600 22px 'Inter';letter-spacing:.14em;text-transform:uppercase}
 .v .pill::before{content:'';width:10px;height:10px;border-radius:50%;background:#2F95FF;box-shadow:0 0 12px #2F95FF}
@@ -70,7 +71,7 @@ html,body{width:1080px;height:1350px;overflow:hidden}
 .v .lead strong{color:#fff}
 .v .list .item{border-top:1px solid rgba(148,163,184,.16)}
 .v .list .item:last-child{border-bottom:1px solid rgba(148,163,184,.16)}
-.v .num{font:600 26px 'Inter Display';color:#2F95FF;width:52px;padding-top:9px;flex:0 0 52px}
+.v .num{font:600 26px 'Sora';color:#2F95FF;width:52px;padding-top:9px;flex:0 0 52px}
 .v .card{background:rgba(15,23,42,.65);border:1px solid rgba(148,163,184,.18)}
 .v .card-tag{color:#6DB4FF}
 .v .btn{background:#2F95FF;color:#fff;box-shadow:0 12px 44px rgba(47,149,255,.45)}
@@ -80,8 +81,7 @@ html,body{width:1080px;height:1350px;overflow:hidden}
 .v .count,.v .bottom{color:#64748B}
 .v .swipe{color:#6DB4FF}
 .v .brand{display:flex;align-items:center;gap:16px}
-.v .brand .m{height:40px}
-.v .brand .w{height:17px;opacity:.95}
+.v .brand .h{height:40px}
 .v .mono-hero{position:absolute;right:20px;bottom:30px;width:470px;z-index:0}
 
 /* ---------- UNNAR ---------- */
@@ -110,21 +110,20 @@ html,body{width:1080px;height:1350px;overflow:hidden}
 .u .count,.u .bottom{color:#5E5870}
 .u .swipe{color:#C8982E}
 .u .brand{display:flex;align-items:center;gap:16px}
-.u .brand .mk{width:52px;height:52px;border-radius:13px;background:#2A2214;border:1px solid rgba(200,152,46,.28);display:flex;align-items:center;justify-content:center;font:400 36px 'Gelasio';color:#C8982E;padding-bottom:3px}
-.u .brand .nm{font:400 36px 'Gelasio';color:#EDE8DF}
+.u .brand .h{height:50px}
 """
 
 def brand_html(b):
     if b == "v":
-        return f'<div class="brand"><img class="m" src="{A}vorinn-monograma-alpha.png"><img class="w" src="{A}vorinn-wordmark-alpha.png"></div>'
-    return '<div class="brand"><div class="mk">U</div><div class="nm">Unnar</div></div>'
+        return f'<div class="brand"><img class="h" src="{M}vorinn-horizontal.png"></div>'
+    return f'<div class="brand"><img class="h" src="{M}unnar-horizontal-fundo-escuro.svg"></div>'
 
 def page(post, i, total, inner):
     b = post["brand"]
     is_cover = ('mono-hero' in inner) or ('shot-cover' in inner)
     wm = ''
     if i == 0 and not is_cover:
-        wm = '<div class="wm-u">U</div>' if b == 'u' else f'<img class="wm-v" src="{A}vorinn-monograma-alpha.png">'
+        wm = f'<img class="wm-u" src="{M}unnar-marca-fundo-escuro.svg">' if b == 'u' else f'<img class="wm-v" src="{M}vorinn-monograma.png">'
     left = "Vorinn Tecnologia" if b == "v" else "Unnar · um produto Vorinn"
     right = '<div class="swipe">Arraste <span style="font-size:30px">→</span></div>' if (i == 0 and total > 1) else '<div>@vorinn.com.br</div>'
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head>
