@@ -18,16 +18,36 @@ Divulgar a Vorinn e, principalmente, o Unnar no Instagram para conseguir cliente
 
 ## Marca
 - Um perfil só: @vorinn.com.br (o @vorinn já era de outra pessoa). O Unnar fica com cerca de 2/3 dos posts enquanto for o foco.
-- **Vorinn** (vorinn.com.br): fundo #030814, azul #2F95FF / #6DB4FF, texto #CBD5E1 e
-  #94A3B8; títulos Inter Display SemiBold, texto Inter.
+- **Vorinn** (vorinn.com.br): fundo #030814, azul #2F95FF / #6DB4FF (botão: degradê
+  #0180FC → #005BCF), texto #CBD5E1 e #94A3B8; títulos em **Sora** semibold
+  (`assets/fonts/`, licença OFL), texto em Inter.
 - **Unnar** (unnar.com.br): fundo #0E0D12, superfície #19181F, creme #EDE8DF, dourado
-  #C8982E, lilás acinzentado #9088A0; títulos em serifa (Georgia/Gelasio) com destaque
-  em itálico dourado.
-- Cores e logos acima foram capturados do site. Quando o escritório entregar os oficiais
-  em `assets/marca/`, eles passam a valer.
+  #C8982E (hover #E0B84A), lilás acinzentado #9088A0; títulos em serifa (Georgia/Gelasio)
+  com destaque em itálico dourado.
+- **Logos oficiais em `assets/marca/`** (entregues pelo escritório em 26/11/2026). O símbolo
+  do Unnar é o **"N" dourado com a barra**, nunca um "U"; o nome "UNNAR" é desenho (SVG),
+  não se digita. A Vorinn só tem PNG (para fundo escuro); o monograma fica nítido até uns
+  430 px de largura. Abertura animada do Unnar: `assets/marca/unnar-abertura.mp4`.
+- As capturas de tela do Unnar (de 01/10/2026) ainda têm a marca antiga no cabeçalho do app:
+  ao usar, corte o cabeçalho (celular) ou a barra lateral (painel).
 - Voz: primeira pessoa do singular ("Desenvolvo…", "Me chame no WhatsApp"), direta.
 - Telas do Unnar sempre com dados de exemplo, com o aviso "Tela real do Unnar, com dados
   de exemplo." Nunca dados reais de clientes.
+
+## O que os textos podem e não podem dizer (conferido no código pelo escritório, 26/11/2026)
+- Despesas: a empresa vê quem lançou, o quê, quanto e a **data** (sem hora). Não há foto,
+  comprovante, aprovação nem reembolso.
+- Presença: confirmação, check-in e check-out ficam registrados com data e hora; no painel a
+  empresa vê a situação ("Check-in feito"), e o horário aparece no aviso do sino. Não falar em
+  GPS nem em prova de presença.
+- Avisos: o sino atualiza a cada minuto com o Unnar aberto; escalas também chegam por e-mail.
+  Não prometer "tempo real" nem notificação no celular com o app fechado.
+- Unnar não é app de loja (é web, dá para pôr atalho na tela inicial) e não tem cadastro
+  próprio nem teste grátis.
+- Orçamento e Contratado são situações do evento: o Unnar não gera nem envia orçamento.
+- IA jurídica: petição inicial **trabalhista**, no modelo do escritório, em Word; é minuta e a
+  revisão final é do advogado.
+- Telas: dizer "tela real", não "gravação". Não mostrar nem citar endereços.
 
 ## Formatos
 - Carrossel: PNG 1080×1350. Fonte em `scripts/posts.py`, render com `scripts/render.py`.

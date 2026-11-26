@@ -11,6 +11,7 @@ with sync_playwright() as p:
     br = p.chromium.launch(executable_path=exe, args=["--no-sandbox","--allow-file-access-from-files"]) if exe else p.chromium.launch(args=["--allow-file-access-from-files"])
     pg = br.new_page(viewport={"width":1080,"height":1920}, device_scale_factor=1)
     pg.goto(html.as_uri()); pg.wait_for_load_state("networkidle"); pg.evaluate("document.fonts.ready")
+    pg.evaluate("window.ready ? window.ready() : 1")
     if mode == "frames":
         out.mkdir(parents=True, exist_ok=True)
         for t in times:

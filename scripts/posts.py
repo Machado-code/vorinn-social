@@ -2,7 +2,9 @@
 # Cada post: id, marca ('v' = Vorinn, 'u' = Unnar), título interno, slides (HTML do miolo) e legenda.
 
 import pathlib
-A = (pathlib.Path(__file__).resolve().parent.parent / "assets" / "capturas-do-site").as_uri() + "/"
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+A = (ROOT / "assets" / "capturas-do-site").as_uri() + "/"
+M = (ROOT / "assets" / "marca").as_uri() + "/"
 
 def shot_note(t="Tela real do Unnar, com dados de exemplo."):
     return f'<div class="note">{t}</div>'
@@ -15,7 +17,7 @@ POSTS = [
   f'''<div class="pill">Tecnologia · Inovação · Soluções</div>
   <h1 class="mt40">Tecnologia que <span class="acc">conecta, organiza</span> e transforma.</h1>
   <p class="lead mt40">Sistemas, automações e IA sob medida para empresas e profissionais.</p>
-  <img class="mono-hero" src="{A}vorinn-monograma-alpha.png">''',
+  <img class="mono-hero" src="{M}vorinn-monograma.png">''',
 
   '''<div class="pill">O que eu faço</div>
   <h2 class="mt32">Tecnologia sob medida para o seu negócio <span class="acc">ir além</span>.</h2>
@@ -29,7 +31,7 @@ POSTS = [
   '''<div class="pill">Produtos próprios</div>
   <h2 class="mt32">Soluções prontas para <span class="acc">acelerar</span> o seu negócio.</h2>
   <div class="card mt48"><div class="card-tag">Unnar</div><h3>Gestão operacional para empresas de eventos e fotografia</h3><p>Clientes, eventos e equipe num só lugar. unnar.com.br</p></div>
-  <div class="card mt32"><div class="card-tag">IA jurídica</div><h3>Petições iniciais com IA para escritórios de advocacia</h3><p>Entregues em Word, com a revisão final feita pelo advogado.</p></div>''',
+  <div class="card mt32"><div class="card-tag">IA jurídica</div><h3>Petição inicial trabalhista com IA para escritórios de advocacia</h3><p>A partir dos documentos do cliente e do modelo do seu escritório, em Word. A revisão final é do advogado.</p></div>''',
 
   '''<div class="pill">Como eu trabalho</div>
   <h2 class="mt32">Mais que código: uma <span class="acc">parceria</span>.</h2>
@@ -61,7 +63,7 @@ Tem uma ideia ou um processo que toma tempo demais? O link do WhatsApp está na 
   f'''<div class="eyebrow">Para empresas de eventos e fotografia</div>
   <h1 class="mt32">Gerencie menos.<br><em>Crie mais.</em></h1>
   <p class="lead mt32">Conheça o Unnar.</p>
-  <img class="shot shot-cover" src="{A}unnar-painel.png">''',
+  <img class="shot shot-cover" src="{A}unnar-painel-conteudo.png">''',
 
   '''<div class="eyebrow">Como funciona</div>
   <h2 class="mt32">Clientes, eventos e equipe <em>num só lugar</em>.</h2>
@@ -74,7 +76,7 @@ Tem uma ideia ou um processo que toma tempo demais? O link do WhatsApp está na 
   f'''<div class="eyebrow">O painel da empresa</div>
   <h2 class="mt32">Tudo o que importa <em>em uma tela</em>.</h2>
   <p class="lead mt32">Clientes, equipe e próximos eventos, com atalhos para criar evento, cliente ou convidar alguém.</p>
-  <img class="shot shot-wide mt56" src="{A}unnar-painel.png">
+  <img class="shot shot-wide mt56" src="{A}unnar-painel-conteudo.png">
   {shot_note()}''',
 
   f'''<div class="row">
@@ -240,7 +242,7 @@ Qual tarefa mais toma o tempo da sua equipe? Me conte no WhatsApp (link na bio).
    <div class="item"><div class="num">i.</div><div><h3>Confirmar presença</h3><p>Sem precisar responder no grupo.</p></div></div>
    <div class="item"><div class="num">ii.</div><div><h3>Check-in e check-out</h3><p>Com data e hora registradas.</p></div></div>
    <div class="item"><div class="num">iii.</div><div><h3>Lançar despesas</h3><p>O que você gastou no evento, direto no portal.</p></div></div>
-   <div class="item"><div class="num">iv.</div><div><h3>Receber avisos</h3><p>Novas escalas chegam no sino.</p></div></div>
+   <div class="item"><div class="num">iv.</div><div><h3>Receber avisos</h3><p>Novas escalas chegam no sino e por e-mail.</p></div></div>
   </div>''',
 
   '''<h1>Conhece uma empresa que ainda escala a equipe pelo grupo?</h1>
@@ -286,26 +288,26 @@ Quer conhecer? Link do WhatsApp na bio.
  "id": "08-ia-advocacia", "brand": "v", "title": "IA para escritórios de advocacia",
  "slides": [
   '''<div class="pill">IA para escritórios de advocacia</div>
-  <h1 class="mt40">Da pasta do cliente à <span class="acc">petição inicial</span>, com IA.</h1>''',
+  <h1 class="mt40">Da pasta do cliente à <span class="acc">petição inicial trabalhista</span>, com IA.</h1>''',
 
   '''<h2>Como funciona:</h2>
   <div class="list mt48">
    <div class="item"><div class="num">01</div><div><h3>Os documentos do cliente</h3><p>O escritório reúne o material do caso.</p></div></div>
-   <div class="item"><div class="num">02</div><div><h3>A IA redige</h3><p>A petição inicial é gerada a partir dos documentos.</p></div></div>
-   <div class="item"><div class="num">03</div><div><h3>Entregue em Word</h3><p>Pronta para revisar e ajustar.</p></div></div>
+   <div class="item"><div class="num">02</div><div><h3>A IA redige a minuta</h3><p>No modelo do seu escritório. Se falta informação, ela pergunta.</p></div></div>
+   <div class="item"><div class="num">03</div><div><h3>Entregue em Word</h3><p>No papel timbrado, com o que ficou em branco destacado.</p></div></div>
    <div class="item"><div class="num">04</div><div><h3>O advogado revisa</h3><p>A revisão final é sempre de quem assina.</p></div></div>
   </div>''',
 
   '''<h1>Menos tempo digitando. <span class="acc">Mais tempo para a estratégia.</span></h1>
   <div class="cta mt56"><div class="btn">Fale direto com quem desenvolve</div><div class="cta-sub">Link do WhatsApp na bio</div></div>''',
  ],
- "caption": """Montar a petição inicial a partir dos documentos do cliente toma horas que poderiam ir para a estratégia do caso.
+ "caption": """Montar a petição inicial trabalhista a partir dos documentos do cliente toma horas que poderiam ir para a estratégia do caso.
 
-Desenvolvi uma solução com IA para escritórios de advocacia: ela lê os documentos do cliente e gera a petição inicial, entregue em Word. A revisão final é sempre do advogado.
+Desenvolvi uma solução com IA para escritórios de advocacia: ela lê os documentos do cliente e redige a minuta da petição inicial trabalhista no modelo do seu escritório, entregue em Word. Quando falta informação, ela pergunta em vez de inventar. A revisão final é sempre do advogado.
 
-Tem um escritório e quer ver funcionando? Me chame no WhatsApp pelo link da bio.
+Tem um escritório trabalhista e quer ver funcionando? Me chame no WhatsApp pelo link da bio.
 
-#advocacia #direito #inteligenciaartificial #tecnologianodireito""",
+#advocacia #advocaciatrabalhista #inteligenciaartificial #tecnologianodireito""",
 },
 # ------------------------------------------------------------------ 9
 {
@@ -315,7 +317,7 @@ Tem um escritório e quer ver funcionando? Me chame no WhatsApp pelo link da bio
   <h1 class="mt32">Quanto a equipe <em>gastou</em> no evento?</h1>''',
 
   '''<h2>Depois do evento, <em>tudo registrado</em>.</h2>
-  <div class="card mt56"><div class="card-tag">Despesas</div><h3>Lançou, apareceu no painel</h3><p>Quem gastou algo para o evento registra pelo celular. A empresa vê quem lançou, o quê e quanto, com data e hora.</p></div>
+  <div class="card mt56"><div class="card-tag">Despesas</div><h3>Lançou, apareceu no painel</h3><p>Quem gastou algo para o evento registra pelo celular. A empresa vê quem lançou, o quê, quanto e a data de cada despesa.</p></div>
   <div class="card mt32"><div class="card-tag">Avisos</div><h3>Ninguém fica sem saber</h3><p>Avisos no sino, dos dois lados: a equipe recebe as escalas, a empresa recebe presença e despesas.</p></div>''',
 
   '''<h1>Gerencie menos.<br><em>Crie mais.</em></h1>
@@ -324,12 +326,12 @@ Tem um escritório e quer ver funcionando? Me chame no WhatsApp pelo link da bio
  ],
  "caption": """Estacionamento, almoço da equipe, um item que faltou no dia: despesa de evento costuma virar foto perdida no celular.
 
-No Unnar, quem gastou registra pelo portal no celular. A empresa vê quem lançou, o quê e quanto, cada registro com data e hora.
+No Unnar, quem gastou registra pelo portal no celular. A empresa vê quem lançou, o quê, quanto e a data de cada despesa.
 
 E os avisos chegam no sino dos dois lados: a equipe recebe as escalas, a empresa recebe presença e despesas.
 
 Quer conhecer os planos? Me chame no WhatsApp pelo link da bio.
 
-#gestaodeeventos #empresadeeventos #fotografiadeeventos #gestaofinanceira""",
+#gestaodeeventos #empresadeeventos #fotografiadeeventos #cerimonialista""",
 },
 ]
