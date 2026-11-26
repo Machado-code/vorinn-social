@@ -1,0 +1,152 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0E0D12}
+body{font-family:'Inter',sans-serif;color:#EDE8DF;position:relative}
+.bg{position:absolute;inset:0;background:
+  radial-gradient(circle at 50% 42%, rgba(200,152,46,.13), transparent 45%),
+  radial-gradient(circle at 90% 0%, rgba(200,152,46,.10), transparent 35%)}
+.a{animation-fill-mode:both;animation-play-state:paused;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+@keyframes in{from{opacity:0;transform:translateY(50px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes fadeout{from{opacity:1}to{opacity:0}}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}70%{opacity:1;transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
+@keyframes hour{from{transform:rotate(-200deg)}to{transform:rotate(90deg)}}
+@keyframes minute{from{transform:rotate(-1080deg)}to{transform:rotate(0deg)}}
+@keyframes shake{0%,100%{transform:rotate(0)}20%{transform:rotate(-6deg)}40%{transform:rotate(6deg)}60%{transform:rotate(-4deg)}80%{transform:rotate(3deg)}}
+@keyframes glow{0%{opacity:0;transform:scale(.4)}60%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+@keyframes phoneup{from{transform:translate(-50%,1300px)}to{transform:translate(-50%,0)}}
+@keyframes zoom{from{transform:scale(1)}to{transform:scale(1.07)}}
+@keyframes ring{0%{opacity:0;transform:scale(1.3)}60%{opacity:1;transform:scale(.97)}100%{opacity:1;transform:scale(1)}}
+
+.hook{position:absolute;left:60px;right:60px;top:300px;text-align:center;font:700 56px/1.2 'Inter';color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.7);z-index:5}
+.scene{position:absolute;inset:0}
+.center{position:absolute;left:90px;right:90px;top:430px;bottom:330px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:56px}
+.big{font:400 118px/1.06 'Gelasio';letter-spacing:-.01em}
+.mid{font:400 92px/1.1 'Gelasio'}
+em{font-style:italic;color:#C8982E}
+.sub{font:500 46px/1.35 'Inter';color:#9088A0}
+
+/* clock */
+.clock{width:300px;height:300px;border-radius:50%;border:8px solid #C8982E;position:relative;box-shadow:0 0 60px rgba(200,152,46,.25)}
+.clock .h,.clock .m{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;border-radius:8px;background:#EDE8DF}
+.clock .h{width:14px;height:80px;margin-left:-7px}
+.clock .m{width:9px;height:118px;margin-left:-4.5px;background:#C8982E}
+.clock .c{position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#EDE8DF}
+
+/* chat */
+.badge{display:inline-flex;align-items:center;gap:18px;padding:18px 34px;border-radius:999px;background:#C8982E;color:#141008;font:700 44px 'Inter'}
+.bubbles{display:flex;flex-direction:column;gap:20px;width:820px}
+.b{max-width:600px;padding:22px 32px;border-radius:32px;font:400 40px/1.3 'Inter';background:#221F2A;text-align:left}
+.b.r{align-self:flex-end;background:#2A2214;border:1px solid rgba(200,152,46,.25)}
+
+/* brand */
+.mkbig{width:230px;height:230px;border-radius:56px;background:#2A2214;border:2px solid rgba(200,152,46,.4);display:flex;align-items:center;justify-content:center;font:400 170px 'Gelasio';color:#C8982E;padding-bottom:12px;box-shadow:0 0 120px rgba(200,152,46,.35)}
+
+/* phone */
+#phone{position:absolute;left:50%;top:640px;width:500px;height:1040px;border-radius:58px;padding:13px;background:#19181F;border:1px solid #2A2733;box-shadow:0 40px 110px rgba(0,0,0,.7);overflow:hidden}
+#phone .in{position:relative;width:100%;height:100%;border-radius:46px;overflow:hidden;transform-origin:50% 55%}
+#phone img{width:100%;display:block}
+.hl{position:absolute;border:5px solid #C8982E;border-radius:999px;box-shadow:0 0 24px rgba(200,152,46,.6)}
+.ptitle{position:absolute;left:90px;right:90px;top:430px;text-align:center;font:400 76px/1.12 'Gelasio'}
+/* painel */
+.painel{width:960px;border-radius:24px;border:1px solid #2A2733;box-shadow:0 40px 110px rgba(0,0,0,.7);overflow:hidden}
+.painel img{width:100%;display:block;transform-origin:20% 30%}
+.btn{display:inline-flex;padding:30px 50px;border-radius:999px;background:#C8982E;color:#141008;font:600 42px 'Inter';box-shadow:0 14px 50px rgba(200,152,46,.35)}
+.by{display:flex;align-items:center;gap:18px;font:500 32px 'Inter';color:#9088A0}
+</style></head>
+<body>
+<div class="bg"></div>
+
+<!-- texto fixo no topo -->
+<div class="hook a" style="animation:fadein .3s 0s both, fadeout .25s 13.0s forwards">Todo sábado de evento é isso 😅</div>
+<div class="hook a" style="animation:fadein .3s 13.5s both, fadeout .25s 21.6s forwards">Agora, com o Unnar 👇</div>
+
+<!-- 1. 15h -->
+<div class="scene a" style="animation:fadein .2s 0s both, fadeout .2s 2.2s forwards">
+ <div class="center">
+  <div class="clock a" style="animation-name:pop;animation-duration:.45s;animation-delay:.05s">
+   <div class="h a" style="animation-name:hour;animation-duration:1.3s;animation-delay:.3s"></div>
+   <div class="m a" style="animation-name:minute;animation-duration:1.3s;animation-delay:.3s"></div>
+   <div class="c"></div>
+  </div>
+  <div class="big a" style="animation-name:in;animation-duration:.45s;animation-delay:.35s">Sábado, 15h.</div>
+ </div>
+</div>
+
+<!-- 2. 16h -->
+<div class="scene a" style="animation:fadein .2s 2.3s both, fadeout .2s 4.3s forwards">
+ <div class="center"><div class="big a" style="animation-name:in;animation-duration:.45s;animation-delay:2.35s">O evento começa<br>às <em>16h</em>.</div></div>
+</div>
+
+<!-- 3. pergunta -->
+<div class="scene a" style="animation:fadein .2s 4.4s both, fadeout .2s 6.8s forwards">
+ <div class="center"><div class="big a" style="animation-name:in;animation-duration:.5s;animation-delay:4.45s"><em>Quem da equipe já confirmou?</em></div></div>
+</div>
+
+<!-- 4. grupo -->
+<div class="scene a" style="animation:fadein .2s 6.9s both, fadeout .2s 9.6s forwards">
+ <div class="center" style="gap:40px">
+  <div class="badge a" style="animation-name:pop;animation-duration:.4s;animation-delay:6.95s">💬 47 mensagens não lidas</div>
+  <div class="bubbles">
+   <div class="b a" style="animation-name:pop;animation-duration:.25s;animation-delay:7.35s">Quem vai no sábado?</div>
+   <div class="b r a" style="animation-name:pop;animation-duration:.25s;animation-delay:7.65s">Eu vou! 🙋</div>
+   <div class="b a" style="animation-name:pop;animation-duration:.25s;animation-delay:7.95s">Qual o endereço mesmo?</div>
+   <div class="b r a" style="animation-name:pop;animation-duration:.25s;animation-delay:8.25s">Esqueci de responder 😅</div>
+   <div class="b a" style="animation-name:pop;animation-duration:.25s;animation-delay:8.55s">E o Diego, confirmou?</div>
+  </div>
+ </div>
+</div>
+
+<!-- 5. cachê e despesa -->
+<div class="scene a" style="animation:fadein .2s 9.7s both, fadeout .2s 12.2s forwards">
+ <div class="center" style="gap:70px">
+  <div class="mid a" style="animation-name:in;animation-duration:.45s;animation-delay:9.75s">E o cachê de cada um? 🧾</div>
+  <div class="mid a" style="animation-name:in;animation-duration:.45s;animation-delay:10.75s"><em>E a despesa do estacionamento?</em></div>
+ </div>
+</div>
+
+<!-- 6. virada -->
+<div class="scene a" style="animation:fadein .2s 12.3s both, fadeout .25s 13.9s forwards">
+ <div class="center" style="gap:44px">
+  <div class="mkbig a" style="animation-name:glow;animation-duration:.6s;animation-delay:12.35s">U</div>
+  <div class="big a" style="animation-name:in;animation-duration:.45s;animation-delay:12.7s">Unnar</div>
+ </div>
+</div>
+
+<!-- 7-8. celular -->
+<div class="scene a" style="animation:fadein .2s 14.0s both, fadeout .25s 19.3s forwards">
+ <div class="ptitle a" style="animation:in .45s 14.15s both, fadeout .2s 16.6s forwards">A equipe <em>confirma</em> pelo celular.</div>
+ <div class="ptitle a" style="animation:in .45s 16.8s both">Check-in com <em>data e hora</em>.</div>
+ <div id="phone" class="a" style="animation:phoneup .7s 14.05s both cubic-bezier(.2,.8,.2,1)"><div class="in a" style="animation-name:zoom;animation-duration:5s;animation-delay:14.6s">
+  <img src="../../assets/capturas-do-site/unnar-portal-celular.png">
+  <div class="hl a" style="left:40px;top:545px;width:138px;height:38px;animation:ring .45s 15.2s both, fadeout .2s 16.6s forwards"></div>
+  <div class="hl a" style="left:40px;top:805px;width:138px;height:38px;animation:ring .45s 15.6s both, fadeout .2s 16.6s forwards"></div>
+  <div class="hl a" style="left:322px;top:540px;width:110px;height:46px;animation-name:ring;animation-duration:.45s;animation-delay:17.3s"></div>
+ </div></div>
+</div>
+
+<!-- 9. painel -->
+<div class="scene a" style="animation:fadein .25s 19.4s both, fadeout .25s 21.7s forwards">
+ <div class="center" style="gap:60px;top:400px">
+  <div class="mid a" style="animation-name:in;animation-duration:.45s;animation-delay:19.45s">E você acompanha <em>tudo no painel</em>.</div>
+  <div class="painel a" style="animation-name:in;animation-duration:.55s;animation-delay:19.7s"><img class="a" style="animation-name:zoom;animation-duration:2.4s;animation-delay:19.9s" src="../../assets/capturas-do-site/unnar-painel.png"></div>
+ </div>
+</div>
+
+<!-- 10. fechamento -->
+<div class="scene a" style="animation:fadein .3s 21.8s both">
+ <div class="center" style="gap:30px;top:330px">
+  <div class="mkbig a" style="width:150px;height:150px;border-radius:38px;font-size:110px;animation-name:glow;animation-duration:.5s;animation-delay:21.85s">U</div>
+  <div class="big a" style="margin-top:30px;animation-name:in;animation-duration:.45s;animation-delay:22.1s">Gerencie menos.</div>
+  <div class="big a" style="animation-name:in;animation-duration:.45s;animation-delay:22.45s"><em>Crie mais.</em></div>
+  <div class="btn a" style="margin-top:40px;animation-name:in;animation-duration:.45s;animation-delay:22.9s">Conheça o Unnar · link na bio</div>
+  <div class="by a" style="margin-top:24px;animation-name:fadein;animation-duration:.5s;animation-delay:23.3s">um produto <img src="../../assets/capturas-do-site/vorinn-wordmark-alpha.png" style="height:21px"></div>
+ </div>
+</div>
+
+<script>
+window.seek = (t) => { document.getAnimations().forEach(a => { a.pause(); a.currentTime = t*1000; }); };
+</script>
+</body></html>
