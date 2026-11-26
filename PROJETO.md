@@ -1,4 +1,4 @@
-# Projeto: Instagram da Vorinn (@vorinn)
+# Projeto: Instagram da Vorinn (@vorinn.com.br)
 
 Memória compartilhada entre o Claude do claude.ai e o escritório (Claude Code no VS Code).
 Quem mudar uma decisão atualiza este arquivo no mesmo commit.
@@ -17,7 +17,7 @@ Divulgar a Vorinn e, principalmente, o Unnar no Instagram para conseguir cliente
   Papel, rotina e limites em `ESCRITORIO.md`.
 
 ## Marca
-- Um perfil só: @vorinn. O Unnar fica com cerca de 2/3 dos posts enquanto for o foco.
+- Um perfil só: @vorinn.com.br (o @vorinn já era de outra pessoa). O Unnar fica com cerca de 2/3 dos posts enquanto for o foco.
 - **Vorinn** (vorinn.com.br): fundo #030814, azul #2F95FF / #6DB4FF, texto #CBD5E1 e
   #94A3B8; títulos Inter Display SemiBold, texto Inter.
 - **Unnar** (unnar.com.br): fundo #0E0D12, superfície #19181F, creme #EDE8DF, dourado
@@ -44,7 +44,7 @@ Divulgar a Vorinn e, principalmente, o Unnar no Instagram para conseguir cliente
   e ela roda no escritório (o claude.ai não instala pacotes).
 
 ## Stack
-- Publicação: Buffer gratuito (mesma conta do Sem Atalhos), canal Instagram @vorinn
+- Publicação: Buffer gratuito (mesma conta do Sem Atalhos), canal Instagram @vorinn.com.br
   conectado pelo login do Instagram, sem página do Facebook.
 - Imagens e vídeos: neste repositório (público). O Buffer recebe o link raw fixado no
   commit: `https://raw.githubusercontent.com/Machado-code/vorinn-social/<sha>/<caminho>`
