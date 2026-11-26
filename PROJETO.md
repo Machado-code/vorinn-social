@@ -35,8 +35,13 @@ Divulgar a Vorinn e, principalmente, o Unnar no Instagram para conseguir cliente
   `scripts/make_audio.py` (sem direitos autorais). Texto fixo no topo sobre a dor do
   cliente, cenas de 2 a 3 s com uma frase cada, telas do Unnar, marca no fim.
   Área segura: evitar ~250 px do topo, ~420 px de baixo e ~150 px da direita.
-- Não usar: pedido de comentário com palavra-chave ("Comente UNNAR…") e gancho sobre IA
-  ("Pedi pra IA criar…"). A chamada é o WhatsApp pelo link da bio.
+- Recursos visuais dos próximos Reels: legenda que destaca palavra por palavra no topo e
+  cartões de tela animados no meio, com os fluxos reais do Unnar (gravações do escritório).
+- Não usar: pedido de comentário com palavra-chave ("Comente UNNAR…"), gancho sobre IA
+  ("Pedi pra IA criar…"), avatar ou voz. A chamada é o WhatsApp pelo link da bio.
+- Sem skill de vídeo de terceiros por enquanto: os Reels saem dos scripts deste
+  repositório. Se um dia entrar uma, o conteúdo dela é lido inteiro antes de instalar,
+  e ela roda no escritório (o claude.ai não instala pacotes).
 
 ## Stack
 - Publicação: Buffer gratuito (mesma conta do Sem Atalhos), canal Instagram @vorinn
@@ -50,7 +55,12 @@ Divulgar a Vorinn e, principalmente, o Unnar no Instagram para conseguir cliente
 ## Conteúdo
 - Linhas: dor da operação de eventos; Unnar em uso (um recurso por post); freelancer
   (uma conta para várias empresas); Vorinn (automações, IA aplicada, sistemas sob medida).
-- Ritmo: segunda, quarta e sexta; um Reel por semana e dois carrosséis.
+- Ritmo: segunda, quarta e sexta; um Reel por semana e dois carrosséis. Qualidade antes
+  de volume: nada de um vídeo por dia.
+- Ciclo de métricas: toda semana, antes de montar o lote, o claude.ai lê no Buffer o
+  alcance, os salvamentos e os compartilhamentos dos posts publicados e repete o tema ou o
+  formato que funcionou. Com 3 posts por semana, só tirar conclusão depois de 4 a 6
+  semanas de dados.
 - Lote 1 (aprovado em 26/11/2026): `posts/2026-11/lote-1/`, 9 carrosséis.
   Agenda: posts 1 a 3 no dia do lançamento, depois segunda, quarta e sexta.
 - Reel 1 "Quem já confirmou?": `reels/2026-11/` (abre o perfil no lançamento).
