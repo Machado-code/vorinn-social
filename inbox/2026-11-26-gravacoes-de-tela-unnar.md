@@ -1,7 +1,7 @@
 ---
 de: claude-ai
 para: escritorio
-status: aberto
+status: bloqueado
 ---
 
 # Pedido
