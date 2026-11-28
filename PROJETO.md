@@ -76,6 +76,10 @@ Divulgar a Vorinn e, principalmente, o Unnar no Instagram para conseguir cliente
 - Atendimento: perguntas frequentes nativas do Instagram, apontando para o WhatsApp
   (19) 99559-6092.
 - Sem custo no início: sem anúncios e sem ferramentas pagas.
+- Produção: **gerador** em `gerador/` (aprovado em 28/11/2026). A ideia vira uma ficha YAML e o
+  código monta o carrossel ou o Reel no padrão, com checagens de layout e das regras abaixo.
+  Peça nova sempre pela ficha (`python3 -m gerador <ficha> --previa`, depois sem `--previa`);
+  HTML à mão só para formato que o gerador ainda não cobre. Guia: `gerador/README.md`.
 
 ## Conteúdo
 - Linhas: dor da operação de eventos; Unnar em uso (um recurso por post); freelancer

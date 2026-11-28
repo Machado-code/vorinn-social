@@ -3,6 +3,10 @@
 Aprovado pelo Matheus em 27/11/2026. Exemplo pronto: `reels/2026-12/reel-02-mesa-de-controle.mp4`.
 Modelo para copiar: `reels/modelos/mesa-de-controle.html`.
 
+**Desde 28/11, gere pelo gerador** (`gerador/README.md`): escreva a ficha YAML e rode
+`python3 -m gerador <ficha>`. O HTML de modelo fica só como referência do visual; as regras
+técnicas abaixo já estão no gerador.
+
 ## A ideia
 O Unnar vira um objeto: um console numa mesa, com a marca na tampa e encaixes numerados.
 Cada recurso é um cartucho que cai e encaixa. No fim, a tela do console liga e vira um

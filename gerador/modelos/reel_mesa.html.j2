@@ -1,0 +1,203 @@
+<!doctype html>
+<!-- Gerado por gerador/reel_mesa.py a partir de {{ ficha }}. Não editar à mão: mude a ficha e gere de novo. -->
+<html><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0E0D12}
+body{font-family:'Inter',sans-serif;color:#EDE8DF;position:relative}
+.a{animation-fill-mode:both;animation-play-state:paused}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes fadeout{from{opacity:1}to{opacity:0}}
+@keyframes wordin{from{opacity:0;transform:translateY(22px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+@keyframes sel{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}70%{opacity:1;transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
+@keyframes in{from{opacity:0;transform:translateY(50px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes glow{0%{opacity:0;transform:scale(.4)}60%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+@keyframes rise{0%{opacity:0;translate:0 0 -40px}100%{opacity:1;translate:0 0 0}}
+@keyframes spark{0%{opacity:0;transform:translate(0,0) scale(.4)}20%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1)}}
+@keyframes ring{0%{opacity:0;transform:scale(.6)}12%{opacity:.9}100%{opacity:0;transform:scale(2.2)}}
+@keyframes emerge{from{opacity:0;transform:translate(-20px,330px) scale(.33)}to{opacity:1;transform:none}}
+@keyframes zin{from{transform:scale(1)}to{transform:scale(1.1)}}
+
+.bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 22% 8%, rgba(200,152,46,.16), transparent 70%),linear-gradient(180deg,#121017 0%,#0E0D12 60%)}
+.stage{position:absolute;inset:0;perspective:1600px;perspective-origin:540px 640px;overflow:hidden}
+.world{position:absolute;left:540px;top:860px;width:0;height:0;transform-style:preserve-3d;
+  animation:cam {{ dur }}s 0s both paused;animation-timing-function:cubic-bezier(.45,0,.55,1)}
+@keyframes cam{
+{% for k in cam %}  {{ k.pct }}% {transform:translate3d(0,{{ k.ty }}px,{{ k.tz }}px) rotateX({{ k.rx }}deg) rotateZ({{ k.rz }}deg)}
+{% endfor %}}
+.g{position:absolute;left:0;top:0;transform-style:preserve-3d}
+.f{position:absolute;left:0;top:0;transform-origin:0 0}
+.desk{width:2000px;height:1900px;transform:translate3d(-1000px,-950px,0);
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 2px,transparent 2px 26px),radial-gradient(ellipse 50% 45% at 50% 52%,#4A3527 0%,#2C2018 45%,#15110E 75%);
+  -webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 52%,#000 55%,transparent 78%)}
+.shadow{position:absolute;left:0;top:0;border-radius:40px;background:rgba(0,0,0,.6);filter:blur(26px)}
+.body-front{width:460px;height:240px;background:linear-gradient(180deg,#ECE6DB,#CBC3B5);transform:translate3d(-230px,130px,240px) rotateX(-90deg)}
+.body-right{width:240px;height:300px;background:linear-gradient(90deg,#B6AE9F,#9A9284);transform:translate3d(229.5px,-170px,240px) rotateY(90deg)}
+.screen{position:absolute;left:58px;top:28px;width:344px;height:184px;border-radius:12px;background:#0A090D;box-shadow:inset 0 0 0 3px #1D1B22, inset 0 10px 30px rgba(0,0,0,.6);overflow:hidden}
+.screen img.s{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);object-fit:cover;object-position:top;border-radius:7px}
+.screen img.mk{position:absolute;left:50%;top:50%;height:110px;transform:translate(-50%,-50%);filter:drop-shadow(0 0 18px rgba(200,152,46,.7))}
+.screen .flash{position:absolute;inset:0;background:radial-gradient(circle,#fff,rgba(200,152,46,.6) 40%,transparent 75%)}
+.screen .glass{position:absolute;inset:0;background:linear-gradient(125deg,rgba(255,255,255,.10) 0%,transparent 35%)}
+.lid-top{width:490px;height:330px;border-radius:26px;background:radial-gradient(ellipse at 40% 35%,#2C2933,#1A181F 70%);transform:translate3d(-245px,-185px,276px);box-shadow:inset 0 0 0 2px rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center}
+.lid-top img{height:112px;transform:rotate(-26deg) scaleY(1.8);filter:drop-shadow(0 0 18px rgba(200,152,46,.45))}
+.lid-top .rim{position:absolute;inset:18px;border-radius:18px;border:1.5px solid rgba(200,152,46,.28)}
+.lid-front{width:490px;height:36px;border-radius:0 0 14px 14px;background:linear-gradient(180deg,#201D25,#121016);transform:translate3d(-245px,145px,276px) rotateX(-90deg);border-top:1px solid rgba(255,255,255,.1)}
+.lid-right{width:36px;height:330px;background:#0F0D13;transform:translate3d(245px,-185px,276px) rotateY(90deg)}
+.led{position:absolute;top:13px;width:11px;height:11px;border-radius:50%;background:#2E2A35}
+.led i{position:absolute;inset:0;border-radius:50%;background:#F3C862;box-shadow:0 0 12px 3px rgba(243,200,98,.8)}
+.tray-top{width:540px;height:150px;border-radius:20px;background:linear-gradient(180deg,#25222B,#1B1920);transform:translate3d(-270px,160px,34px);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.05)}
+.tray-front{width:540px;height:34px;border-radius:0 0 14px 14px;background:linear-gradient(180deg,#17151B,#0E0D11);transform:translate3d(-270px,310px,34px) rotateX(-90deg)}
+.tray-right{width:34px;height:150px;background:#0C0B0F;transform:translate3d(270px,160px,34px) rotateY(90deg)}
+.slot{position:absolute;top:42px;width:108px;height:46px;border-radius:10px;background:#0B0A0E;box-shadow:inset 0 3px 8px rgba(0,0,0,.8)}
+.slot i{position:absolute;inset:-3px;border-radius:12px;border:3px solid #F3C862;box-shadow:0 0 22px 4px rgba(243,200,98,.55)}
+.num{position:absolute;top:100px;width:108px;text-align:center;font:600 24px 'Inter';color:rgba(237,232,223,.45)}
+.ring{position:absolute;top:65px;width:140px;height:70px;margin-left:-16px;margin-top:-35px;border-radius:50%;border:4px solid #F3C862}
+.cart{animation:drop .62s both paused}
+@keyframes drop{
+  0%  {transform:translate3d(var(--x),209px,900px);visibility:hidden;animation-timing-function:cubic-bezier(.55,0,1,.45)}
+  1%  {visibility:visible}
+  72% {transform:translate3d(var(--x),209px,34px);animation-timing-function:cubic-bezier(0,.55,.45,1)}
+  85% {transform:translate3d(var(--x),209px,52px);animation-timing-function:cubic-bezier(.55,0,1,.45)}
+  100%{transform:translate3d(var(--x),209px,34px);visibility:visible}}
+.c-top{width:96px;height:32px;border-radius:6px;background:#E8BE62;transform:translate3d(0,0,128px)}
+.c-front{width:96px;height:128px;border-radius:6px 6px 8px 8px;background:linear-gradient(180deg,#D9A845,#B6842B);transform:translate3d(0,32px,128px) rotateX(-90deg);display:flex;align-items:center;justify-content:center}
+.c-front::after{content:"";position:absolute;inset:8px;border-radius:6px;border:2px solid rgba(26,20,8,.25)}
+.c-front svg{width:56px;height:56px}
+.c-right{width:128px;height:32px;background:#946A1F;transform:translate3d(96px,0,128px) rotateY(90deg)}
+.cshadow{position:absolute;left:0;top:0;transform-origin:0 0;width:120px;height:56px;border-radius:14px;background:rgba(0,0,0,.75);filter:blur(10px)}
+.pill{position:absolute;left:0;top:0;transform-origin:0 0;width:max-content;height:66px;padding:0 26px;display:flex;align-items:center;white-space:nowrap;border-radius:999px;background:rgba(14,13,18,.88);border:1.5px solid rgba(200,152,46,.65);font:600 34px 'Inter';color:#EDE8DF;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.pill b{color:#F3C862;font-weight:700;margin-right:.3em}
+.spark{position:absolute;left:0;top:0;width:10px;height:10px;border-radius:50%;background:#F3C862;box-shadow:0 0 10px #F3C862}
+.vignette{position:absolute;inset:0;background:radial-gradient(ellipse 75% 60% at 50% 45%,transparent 55%,rgba(0,0,0,.55) 100%);pointer-events:none}
+.dim{position:absolute;inset:0;background:rgba(10,9,13,.78)}
+.card{position:absolute;border-radius:26px;overflow:hidden;border:1px solid #2A2733;box-shadow:0 40px 120px rgba(0,0,0,.8),0 0 0 1px rgba(200,152,46,.25);transform-origin:50% 62%}
+.card img{width:100%;display:block}
+.zin{position:relative;transform-origin:50% 38%}
+.phone{position:absolute;border-radius:56px;overflow:hidden;background:#0A090D;border:10px solid #19181F;box-shadow:0 40px 120px rgba(0,0,0,.8),0 0 0 1px rgba(200,152,46,.3);transform-origin:50% 60%}
+.phone video,.card video{position:absolute}
+.tag{position:absolute;font:600 30px 'Inter';color:#C8982E;letter-spacing:.08em;text-transform:uppercase}
+.hl{position:absolute;border:5px solid #F3C862;border-radius:999px;box-shadow:0 0 24px rgba(243,200,98,.6)}
+.cap{position:absolute;left:50px;right:50px;top:1300px;text-align:center;font:600 58px/1.35 'Inter';color:#F4F0E8;text-shadow:0 3px 18px rgba(0,0,0,.85);z-index:6}
+.w{display:inline-block;margin:0 .13em;animation:wordin .32s both paused;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+.w.cola{margin-left:-.05em}
+.kw{position:relative;font:italic 400 70px 'Gelasio';color:#F3C862;padding:0 .18em;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.kw .box{position:absolute;inset:4px -2px 0;border:2.5px solid #C8982E;background:rgba(200,152,46,.13);transform-origin:0 50%;animation:sel .28s both paused}
+.kw .box::before,.kw .box::after{content:"";position:absolute;width:13px;height:13px;background:#EDE8DF;border:2.5px solid #C8982E;border-radius:2px}
+.kw .box::before{left:-9px;top:-9px}
+.kw .box::after{right:-9px;bottom:-9px}
+.end{position:absolute;inset:0;background:#0E0D12;z-index:8}
+.end .bgl{position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(200,152,46,.14), transparent 48%)}
+.center{position:absolute;left:90px;right:90px;top:330px;bottom:330px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:30px}
+.big{font:400 118px/1.06 'Gelasio';letter-spacing:-.01em}
+em{font-style:italic;color:#C8982E}
+.btn{display:inline-flex;padding:30px 50px;border-radius:999px;background:#C8982E;color:#141008;font:600 42px 'Inter';box-shadow:0 14px 50px rgba(200,152,46,.35)}
+.by{display:flex;align-items:center;gap:18px;font:500 32px 'Inter';color:#9088A0}
+</style></head>
+<body>
+<div class="bg"></div>
+<div class="stage">
+ <div class="world">
+  <div class="f desk"></div>
+  <div class="shadow" style="width:520px;height:360px;transform:translate3d(-235px,-170px,1px)"></div>
+  <div class="shadow" style="width:560px;height:170px;transform:translate3d(-262px,168px,1px);opacity:.8"></div>
+  <div class="f body-right"></div>
+  <div class="f body-front">
+   <div class="screen">
+{% if screen.img %}    <img class="s a" src="{{ screen.img }}" style="animation-name:fadein;animation-duration:.35s;animation-delay:{{ screen.t_img }}s">
+{% else %}    <img class="mk a" src="{{ a.marca }}" style="animation-name:fadein;animation-duration:.35s;animation-delay:{{ screen.t_img }}s">
+{% endif %}    <div class="flash a" style="animation:fadein .12s {{ screen.t_flash }}s both paused,fadeout .45s {{ screen.t_flash + 0.12 }}s forwards paused"></div>
+    <div class="glass"></div>
+   </div>
+  </div>
+  <div class="f lid-right"></div>
+  <div class="f lid-front">
+{% for s in slots %}   <div class="led" style="left:{{ 388 + 22*loop.index0 }}px">{% if s.estado != 'vazia' %}<i class="a" style="animation-name:fadein;animation-duration:.2s;animation-delay:{{ s.t_land }}s"></i>{% endif %}</div>
+{% endfor %}  </div>
+  <div class="f lid-top"><div class="rim"></div><img src="{{ a.marca }}"></div>
+  <div class="f tray-right"></div>
+  <div class="f tray-front"></div>
+  <div class="f tray-top">
+{% for s in slots %}   <div class="slot" style="left:{{ s.left }}px">{% if s.estado != 'vazia' %}<i class="a" style="animation-name:fadein;animation-duration:.2s;animation-delay:{{ s.t_land }}s"></i>{% endif %}</div>
+   <div class="num" style="left:{{ s.left }}px">{{ loop.index }}</div>
+{% if s.estado == 'cai' %}   <div class="ring a" style="left:{{ s.left }}px;animation-name:ring;animation-duration:.6s;animation-delay:{{ s.t_land }}s"></div>
+{% endif %}{% endfor %}  </div>
+{% for s in slots if s.estado != 'vazia' %}  <div class="cshadow a" style="transform:translate3d({{ s.cx - 12 }}px,197px,35px);animation-name:fadein;animation-duration:{{ '.62' if s.estado == 'cai' else '.01' }}s;animation-delay:{{ s.t_drop }}s"></div>
+{% endfor %}
+{% for s in slots if s.estado != 'vazia' %}  <div class="g{{ ' cart' if s.estado == 'cai' }}" style="{% if s.estado == 'cai' %}--x:{{ s.cx - 48 }}px;animation-delay:{{ s.t_drop }}s{% else %}transform:translate3d({{ s.cx - 48 }}px,209px,34px){% endif %}">
+   <div class="f c-right"></div>
+   <div class="f c-front">{{ s.icone }}</div>
+   <div class="f c-top"></div>
+  </div>
+{% endfor %}
+{% for s in slots if s.pill %}  <div class="pill a" style="transform:translate3d({{ s.cx + s.pill.dx }}px,225px,215px) rotateZ({{ -s.pill.rz }}deg) rotateX({{ -s.pill.rx }}deg) translate(-50%,-74px);animation:rise .4s {{ s.pill.t_in }}s both paused,fadeout .25s {{ s.pill.t_out }}s forwards paused"><b>{{ s.n }}</b>· {{ s.pill.texto }}</div>
+{% endfor %}  <div id="sparks" class="g"></div>
+ </div>
+</div>
+<div class="vignette"></div>
+
+<div class="dim a" style="animation:fadein .5s {{ card.t_in }}s both paused;z-index:3"></div>
+<div class="tag a" style="left:{{ card.tag_x }}px;top:{{ card.tag_y }}px;animation:fadein .4s {{ card.t_in + 0.4 }}s both paused;z-index:4">{{ card.rotulo }}</div>
+{% if card.tipo == 'imagem' %}<div class="card a" style="left:{{ card.x }}px;top:{{ card.y }}px;width:{{ card.w }}px;animation:emerge .6s {{ card.t_in }}s both paused;animation-timing-function:cubic-bezier(.2,.8,.2,1);z-index:4">
+ <div class="zin a" style="animation:zin 1.6s {{ card.t_in + 0.6 }}s both paused;animation-timing-function:cubic-bezier(.45,0,.55,1)">
+  <img src="{{ card.src }}">
+{% for h in card.destaques %}  <div class="hl a" style="left:{{ h.x }}px;top:{{ h.y }}px;width:{{ h.w }}px;height:{{ h.h }}px;border-radius:{{ h.r }}px;animation:pop .35s {{ h.t }}s both paused"></div>
+{% endfor %} </div>
+</div>
+{% else %}<div class="{{ card.classe }} a" style="left:{{ card.x }}px;top:{{ card.y }}px;width:{{ card.w }}px;height:{{ card.h }}px;animation:emerge .6s {{ card.t_in }}s both paused;animation-timing-function:cubic-bezier(.2,.8,.2,1);z-index:4">
+ <video muted playsinline preload="auto" src="{{ card.src }}" data-start="{{ card.t_in }}" data-from="{{ card.inicio }}" style="left:{{ card.vx }}px;top:{{ card.vy }}px;width:{{ card.vw }}px;height:{{ card.vh }}px"></video>
+{% for h in card.destaques %} <div class="hl a" style="left:{{ h.x }}px;top:{{ h.y }}px;width:{{ h.w }}px;height:{{ h.h }}px;border-radius:{{ h.r }}px;animation:pop .35s {{ h.t }}s both paused"></div>
+{% endfor %}</div>
+{% endif %}
+
+{% for c in caps %}<div class="cap a" style="animation:fadeout .2s {{ c.t_out }}s forwards paused">
+ {% for w in c.words %}<span class="w{{ ' kw' if w.kw }}{{ ' cola' if w.cola }}" style="animation-delay:{{ w.t }}s">{% if w.kw %}<span class="box" style="animation-delay:{{ w.t + 0.14 }}s"></span>{% endif %}{{ w.texto }}</span>{% endfor %}
+</div>
+{% endfor %}
+
+<div class="end a" style="animation:fadein .3s {{ fecho.t }}s both paused">
+ <div class="bgl"></div>
+ <div class="center">
+  <img class="a" src="{{ a.marca }}" style="height:170px;filter:drop-shadow(0 0 50px rgba(200,152,46,.35));animation-name:glow;animation-duration:.5s;animation-delay:{{ fecho.t + 0.05 }}s">
+  <div class="big a" style="margin-top:36px;animation-name:in;animation-duration:.45s;animation-delay:{{ fecho.t + 0.3 }}s">{{ fecho.linha1 }}</div>
+  <div class="big a" style="animation-name:in;animation-duration:.45s;animation-delay:{{ fecho.t + 0.6 }}s">{{ fecho.linha2 }}</div>
+  <div class="btn a" style="margin-top:40px;animation-name:in;animation-duration:.45s;animation-delay:{{ fecho.t + 1.0 }}s">{{ fecho.botao }}</div>
+  <div class="by a" style="margin-top:24px;animation-name:fadein;animation-duration:.5s;animation-delay:{{ fecho.t + 1.35 }}s">um produto <img src="{{ a.vorinn }}" style="height:30px"></div>
+ </div>
+</div>
+
+<script>
+const SPARKS = {{ sparks }};
+const sp = document.getElementById('sparks');
+SPARKS.forEach(([x,t,rz,rx]) => {
+  for (let i = 0; i < 8; i++) {
+    const ang = (i/8)*Math.PI*2 + 0.3, r = 70 + (i%3)*22;
+    const d = document.createElement('div'); d.className = 'f';
+    d.style.transform = `translate3d(${x}px,225px,170px) rotateZ(${-rz}deg) rotateX(${-rx}deg)`;
+    const s = document.createElement('div'); s.className = 'spark';
+    s.style.cssText = `--dx:${Math.cos(ang)*r}px;--dy:${Math.sin(ang)*r - 30}px;animation:spark .55s ${t + 0.02*i}s both paused`;
+    d.appendChild(s); sp.appendChild(d);
+  }
+});
+window.seek = async (t) => {
+  document.getAnimations().forEach(a => { a.pause(); a.currentTime = t*1000; });
+  const waits = [];
+  document.querySelectorAll('video').forEach(v => {
+    const st = parseFloat(v.dataset.start), fr = parseFloat(v.dataset.from || '0');
+    const d = isFinite(v.duration) ? v.duration : 9999;
+    const vt = Math.max(0, Math.min(d - 0.04, fr + (t - st)));
+    if (Math.abs(v.currentTime - vt) > 0.001 || v.readyState < 2) {
+      waits.push(new Promise(r => { const h = () => { v.removeEventListener('seeked', h); r(); }; v.addEventListener('seeked', h); v.currentTime = vt; setTimeout(r, 3000); }));
+    }
+  });
+  await Promise.all(waits);
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+};
+window.render = window.seek;
+window.ready = async () => {
+  await Promise.all([...document.querySelectorAll('video')].map(v => v.readyState >= 2 ? 1 :
+    new Promise(r => { v.addEventListener('loadeddata', r, {once:true}); setTimeout(r, 5000); })));
+  return 1;
+};
+</script>
+</body></html>
