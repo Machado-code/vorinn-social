@@ -57,6 +57,11 @@ Divulgar a Vorinn e, principalmente, o Unnar no Instagram para conseguir cliente
   Área segura: evitar ~250 px do topo, ~420 px de baixo e ~150 px da direita.
 - Recursos visuais dos próximos Reels: legenda que destaca palavra por palavra no topo e
   cartões de tela animados no meio, com os fluxos reais do Unnar (gravações do escritório).
+- Reels "Mesa de controle" (aprovado em 27/11/2026, formato da série de quarta): o Unnar
+  vira um console 3D numa mesa; cada recurso é um cartucho numerado que cai e encaixa;
+  legenda palavra por palavra com a palavra-chave em Gelasio itálico dourado numa caixa de
+  seleção; a tela do console liga e vira o cartão com a tela real; fecho padrão. 15 a 20 s,
+  sem voz. Modelo e receita: `reels/modelos/mesa-de-controle.html` e `.md`.
 - Não usar: pedido de comentário com palavra-chave ("Comente UNNAR…"), gancho sobre IA
   ("Pedi pra IA criar…"), avatar ou voz. A chamada é o WhatsApp pelo link da bio.
 - Sem skill de vídeo de terceiros por enquanto: os Reels saem dos scripts deste
@@ -84,6 +89,10 @@ Divulgar a Vorinn e, principalmente, o Unnar no Instagram para conseguir cliente
 - Lote 1 (aprovado em 26/11/2026): `posts/2026-11/lote-1/`, 9 carrosséis.
   Agenda: posts 1 a 3 no dia do lançamento, depois segunda, quarta e sexta.
 - Reel 1 "Quem já confirmou?": `reels/2026-11/` (abre o perfil no lançamento).
+- Reels de quarta: série "Mesa de controle", um recurso por semana (fila em
+  `pautas/fila.md`). Reel 2 pronto: `reels/2026-12/reel-02-mesa-de-controle.mp4`.
+  Depois de 4 episódios, comparar com o Reel 1 (tela gravada) em alcance, retenção,
+  salvamentos e compartilhamentos; se a série ganhar, a sexta também pode virar Reel.
 
 ## Como nos comunicamos
 - `inbox/`: pedidos. Um arquivo por pedido, `inbox/AAAA-MM-DD-assunto.md`
