@@ -1,0 +1,24 @@
+# Ficha do Reel 2 (série "Mesa de controle"). Gere com: python3 -m gerador reels/2026-12/reel-02-mesa-de-controle.yaml
+tipo: reel-mesa
+gancho: "Um evento tem *muitas* peças:"
+pecas:
+  - {nome: Escala, icone: calendario, frase: "a *escala* da equipe,"}
+  - {nome: Confirmação, icone: confirmado, frase: "quem já *confirmou*,"}
+  - {nome: Check-in, icone: checkin, frase: "quem fez *check-in*"}
+  - {nome: Despesas, icone: despesa, frase: "e cada *despesa* lançada."}
+tela:
+  arquivo: assets/unnar/gravacoes/painel-08-despesas-recorte-cartao.png
+  console: assets/unnar/gravacoes/painel-08-despesas-recorte-tela.png
+  frases: ["No Unnar, fica tudo no *mesmo* painel."]
+  destaques:              # em pixels da imagem original
+    - {x: 104, y: 427, w: 1326, h: 142, raio: 36}
+legenda: |
+  Um evento tem muitas peças: a escala da equipe, quem já confirmou, quem fez check-in e
+  cada despesa lançada.
+
+  No Unnar, tudo isso fica no mesmo painel. Você abre o evento e vê a situação de cada
+  pessoa e o que foi lançado, sem caçar mensagem no WhatsApp.
+
+  Quer ver isso no seu próximo evento? Me chama no WhatsApp pelo link da bio.
+
+  #cerimonialista #fotografiadeeventos #produtoradeeventos #gestaodeeventos

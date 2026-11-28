@@ -4,13 +4,14 @@ A tarefa de domingo ("Semana da Vorinn no Buffer") lê esta fila, produz o que e
 "a fazer" para a semana seguinte e atualiza o status. Nada é agendado sem o "aprovo".
 
 ## Reels de quarta: série "Mesa de controle"
-Formato e regras: `reels/modelos/mesa-de-controle.md`. Um recurso por semana, sempre o
+Formato e regras: `reels/modelos/mesa-de-controle.md`. Cada episódio é uma ficha do gerador
+(`gerador/README.md`); as peças das semanas anteriores entram com `estado: encaixada`. Um recurso por semana, sempre o
 mesmo console; o episódio começa com os cartuchos anteriores já encaixados.
 
 | Quarta | Reel | Peça | Telas reais (assets/unnar/gravacoes) | Status |
 |---|---|---|---|---|
 | 02/12 | Reel 2 | Visão geral: as 4 peças | `painel-08-despesas-recorte-*` | pronto (`reels/2026-12/reel-02-mesa-de-controle.mp4`), aguarda "aprovo" |
-| 09/12 | Reel 3 | 1 · Escala | `portal-05-aviso-de-escala-no-sino`, `painel-09-agenda-calendario` | a fazer |
+| 09/12 | Reel 3 | 1 · Escala | `portal-05-aviso-de-escala-no-sino` | pronto pela ficha (`reels/2026-12/reel-03-escala.yaml` e `.mp4`), aguarda "aprovo" |
 | 16/12 | Reel 4 | 2 · Confirmação | `portal-02-confirmar-presenca`, `painel-08-presenca-no-painel` | a fazer |
 | 23/12 | Reel 5 | 3 · Check-in | `portal-03-check-in`, `painel-08-presenca-no-painel` | a fazer |
 | 30/12 | Reel 6 | 4 · Despesas | `portal-04-lancar-despesa`, `painel-08-despesas-no-painel` | a fazer |

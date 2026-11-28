@@ -1,0 +1,26 @@
+# Reel 3 da série "Mesa de controle": peça 1, Escala. Quarta 09/12.
+tipo: reel-mesa
+gancho: "Quem trabalha no *sábado*?"
+pecas:
+  - {nome: Escala, icone: calendario, frase: "Monte a *escala* do evento"}
+  - {nome: Confirmação, icone: confirmado, estado: vazia}
+  - {nome: Check-in, icone: checkin, estado: vazia}
+  - {nome: Despesas, icone: despesa, estado: vazia}
+tela:
+  arquivo: assets/unnar/gravacoes/portal-05-aviso-de-escala-no-sino.mp4
+  formato: cartao
+  corte: [120, 330, 840, 735]     # só a lista de avisos; abaixo disso aparece endereço
+  inicio: 0.9
+  frases: ["a equipe vê no *sino*", "e recebe por *e-mail*"]
+  destaques:
+    - {x: 150, y: 465, w: 780, h: 150, raio: 24, aos: 1.1}
+legenda: |
+  Quem trabalha no sábado? Se a resposta mora num grupo de WhatsApp, alguém sempre fica
+  sem saber.
+
+  No Unnar, você monta a escala do evento e cada pessoa da equipe recebe o aviso no sino
+  do portal e por e-mail. Sem lista perdida no grupo.
+
+  Quer organizar a escala do seu próximo evento? Me chama no WhatsApp pelo link da bio.
+
+  #cerimonialista #fotografiadeeventos #produtoradeeventos #gestaodeeventos

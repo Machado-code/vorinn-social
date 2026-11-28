@@ -1,0 +1,39 @@
+# Exemplo: o post 02 do lote 1 refeito pela ficha. Gere com:
+#   python3 -m gerador gerador/exemplos/carrossel-conheca-o-unnar.yaml
+tipo: carrossel
+marca: u                      # u = Unnar, v = Vorinn
+saida: /tmp/gerador-exemplo/conheca-o-unnar
+slides:
+  - selo: Para empresas de eventos e fotografia
+    titulo: "Gerencie menos.\n*Crie mais.*"
+    texto: Conheça o Unnar.
+    tela: {arquivo: assets/capturas-do-site/unnar-painel-conteudo.png, formato: capa}
+  - selo: Como funciona
+    titulo: Clientes, eventos e equipe *num só lugar*.
+    lado_a_lado: true
+    cartoes:
+      - {selo: Painel, titulo: "No computador, para a gestão", texto: "Clientes, eventos, equipe, presença e despesas."}
+      - {selo: Portal, titulo: "No celular, para a equipe", texto: "Agenda, confirmação de presença, check-in e despesas."}
+    texto: Funciona no navegador, no computador e no celular.
+  - selo: O painel da empresa
+    titulo: Tudo o que importa *em uma tela*.
+    texto: Clientes, equipe e próximos eventos, com atalhos para criar evento, cliente ou convidar alguém.
+    tela: {arquivo: assets/capturas-do-site/unnar-painel-conteudo.png, formato: larga, nota: "Tela real do Unnar, com dados de exemplo."}
+  - selo: O portal da equipe
+    titulo: A agenda *no bolso* de quem trabalha no evento.
+    texto: Confirmar presença, fazer check-in e lançar despesas pelo celular.
+    tela: {arquivo: assets/capturas-do-site/unnar-portal-celular.png, formato: celular, nota: "Tela real do Unnar, com dados de exemplo."}
+  - selo: Veja funcionando
+    titulo: Quer ver o Unnar *na prática*?
+    texto:
+      - Tem um vídeo de 90 segundos com as telas reais em **unnar.com.br**.
+      - Para conhecer os planos, me chame no WhatsApp.
+    cta: {botao: Link do WhatsApp na bio}
+legenda: |
+  Gerencie menos. Crie mais.
+
+  O Unnar é o sistema que eu criei para empresas de eventos e fotografia organizarem a operação.
+
+  Quer conhecer os planos? Me chame no WhatsApp pelo link da bio.
+
+  #gestaodeeventos #empresadeeventos #fotografiadeeventos #fotografodecasamento
